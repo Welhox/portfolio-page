@@ -4,6 +4,10 @@ import githubLight from "./icons/github_light.png";
 import githubDark from "./icons/github_dark.png";
 import resumeLight from "./icons/resume_light.png";
 import resumeDark from "./icons/resume_dark.png";
+import modeDark from "./icons/mode_black.png";
+import modeLight from "./icons/mode_white.png";
+import resumeNew from "./icons/resume.png";
+import modeMoon from "./icons/moon.png";
 
 export const icons = {
   linkedin: {
@@ -17,8 +21,11 @@ export const icons = {
   resume: {
     light: resumeLight,
     dark: resumeDark,
+    new: resumeNew,
+  },
+  mode: {
+    light: modeLight,
+    dark: modeDark,
+    moon: modeMoon,
   },
 } as const;
-
-//This is for safer use of the icons, as wrongly spelled name would trigger a TypeScript error
-export type IconName = keyof typeof icons;
