@@ -1,43 +1,67 @@
-
-import type { Project } from "../types/Project.ts";
+import type { Project } from "../types/project";
 
 export const projects: Project[] = [
+  {
+    id: "transcendence",
+    name: "Transcendence",
+    info: "Full‑stack Pong platform (Fastify/Prisma/SQLite + React/TS, JWT + OTP MFA)",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Transcendence",
+  },
+  {
+    id: "webserv",
+    name: "Webserv",
+    info: "C++ HTTP/1.1 server with epoll and CGI support",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Webserv",
+  },
+  {
+    id: "minishell",
+    name: "Minishell",
+    info: "Bash‑style shell in C: pipes, redirects, built‑ins, signals",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Minishell",
+  },
+  {
+    id: "cube3d",
+    name: "Cube3D",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
     {
-        id: "transcendence",
-        name: "Transcendence",
-        description:
-        "Full‑stack Pong platform: Fastify + Prisma/SQLite backend, React/TS frontend, Nginx reverse proxy, Docker Compose. Features JWT auth, MFA via OTP, tournaments, accessibility, i18n.",
-        // image: "/assets/projects/transcendence.jpg",
-        image: "/assets/me.jpg",
-        repoUrl: "https://github.com/clundber/Transcendence", // update if different
-        websiteUrl: undefined,
-        tags: ["Fastify", "Prisma", "SQLite", "React", "TypeScript", "Docker", "Nginx"],
-    },
+    id: "cube3d2",
+    name: "Cube3D2",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
     {
-        id: "webserv",
-        name: "Webserv",
-        description:
-        "HTTP/1.1 server in C++ with epoll, CGI support, config parsing, static file serving, and robust error handling.",
-        image: "/assets/projects/webserv.jpg",
-        repoUrl: "https://github.com/clundber/Webserv",
-        tags: ["C++", "HTTP/1.1", "CGI", "epoll"],
-    },
+    id: "cube3d22",
+    name: "Cube3D22",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
     {
-        id: "minishell",
-        name: "Minishell",
-        description:
-        "Bash‑style shell in C: parsing, pipes, redirections, built‑ins, environment handling, signals.",
-        image: "/assets/projects/minishell.jpg",
-        repoUrl: "https://github.com/clundber/Minishell",
-        tags: ["C", "Shell", "Parsing"],
-    },
+    id: "cube3d3",
+    name: "Cube3D3",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
     {
-        id: "cube3d",
-        name: "Cube3D",
-        description:
-        "Raycaster inspired by Wolfenstein 3D: textures, minimap, collision, sprites. Built with C and MLX.",
-        image: "/assets/projects/cube3d.jpg",
-        repoUrl: "https://github.com/clundber/Cub3D",
-        tags: ["C", "Graphics", "Raycaster"],
-    },
+    id: "cube3d24",
+    name: "Cube3D24",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
+    {
+    id: "cube3d225",
+    name: "Cube3D225",
+    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    image: "../src/assets/MyPlaceholder.jpg",
+    repoUrl: "https://github.com/clundber/Cub3D",
+  },
 ];

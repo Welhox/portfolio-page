@@ -2,13 +2,16 @@ import React from 'react';
 // import { Navigation } from './components/Navigation';
 import { Header } from './components/Header';
 import me from './assets/Me.jpg';
+import { projects } from './data/projects';
+import { ProjectsGrid } from './components/ProjectMain';
 
 function App() {
 
   return (
-    <>
-    <div className="bg-background min-h-screen flex flex-col">
+  <>
   <Header />
+  <main className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
+    <div className="bg-background min-h-screen flex flex-col">
   <div  className="space-y-8 flex-grow grid sm:grid-cols-1 md:grid-cols-2 gap-40">
     <section className="text-center">
       <div>
@@ -21,27 +24,19 @@ function App() {
     </section>
   </div>
   <div>
-    <section>
-      <h2 className="text-xl font-semibold mb-4 text-center"> Projects</h2>
-      <div className="text-center mb-4">
-        This is a short intro about the projects, noice!
-      </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 px-20">
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100 hover:shadow-lg"> Feature 1 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 2 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 3 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 1 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 2 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 3 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 1 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 2 </div>
-        <div className="bg-teal-400 p-4 rounded hover:bg-teal-400/80 hover:text-teal-100"> Feature 3 </div>
+    <section className="mt-10">
+      <h2 className="px-6 md:px-20 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+      Projects
+      </h2>
+      <div className="mt-6">
+        <ProjectsGrid items={projects} />
       </div>
     </section>
     </div>
-  <div className="bg-teal-500 text-center text-sm text-teal-100 mt-4"> &copy; 2025 My Website. ALl rights reserved </div>
 
 </div>
+  </main>
+  <div className="bg-primary text-center text-sm text-secondary mt-4"> &copy; 2025 My Website. ALl rights reserved </div>
   </>
   )
 }
