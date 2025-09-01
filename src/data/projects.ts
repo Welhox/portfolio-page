@@ -60,7 +60,8 @@ export const projects: Project[] = [
     {
     id: "cube3d225",
     name: "Cube3D225",
-    info: "Wolfenstein‑style raycaster in C with textures and sprites",
+    info: `Wolfenstein‑style raycaster in C with textures and sprites Wolfenstein‑style raycaster in C with textures and sprites Wolfenstein‑style raycaster in C with textures and sprites
+          Wolfenstein‑style raycaster in C with textures and spritesWolfenstein‑style raycaster in C with textures and spritesWolfenstein‑style raycaster in C with textures and spritesWolfenstein‑style raycaster in C with textures and sprites OK`,
     image: "../src/assets/MyPlaceholder.jpg",
     repoUrl: "https://github.com/clundber/Cub3D",
   },
