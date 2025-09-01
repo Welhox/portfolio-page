@@ -3,20 +3,51 @@ import { Navigation } from "./Navigation";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Close the menu on route change or ESC (optional but nice)
+  // Close the menu on ESC
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Handle show/hide on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === 0) {
+        setShow(true); // always show at top
+      } else if (currentScrollY > lastScrollY) {
+        setShow(false); // scrolling down
+      } else {
+        setShow(true); // scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="bg-primary px-6 py-4 text-primary">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 
+                  bg-primary px-6 py-4 text-primary 
+                  transition-transform duration-300
+                  ${show ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="mx-auto flex items-center justify-between">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="cursor-pointer">
         <h1 className="text-xl font-bold text-secondary font-artdeco tracking-wider">
           &lt;〈CASIMIR LUNDBERG〉&gt;
         </h1>
+        </button>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-4 items-center">
@@ -45,7 +76,7 @@ export function Header() {
       </div>
 
       {/* Mobile panel */}
-     <div
+      <div
         id="mobile-menu"
         className={`md:hidden absolute right-3 mt-2 w-15 rounded-lg bg-primary shadow-lg
                     overflow-hidden transition-[max-height] duration-300
@@ -55,7 +86,6 @@ export function Header() {
           <Navigation mobile />
         </nav>
       </div>
-
     </header>
   );
 }

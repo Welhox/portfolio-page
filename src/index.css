@@ -7,14 +7,14 @@
   --font-artdeco: 'Poiret One', sans-serif;
   /* Light mode */
   --color-background: white;
-  --color-primary: black;
+  --color-primary: theme('colors.slate.500');
   --color-secondary: white;
 }
 
 .dark {
-  --color-background: black;
+  --color-background: theme('colors.slate.500');
   --color-primary: white;
-  --color-secondary: black;
+  --color-secondary: theme('colors.slate.500');
 }
 
 /* base layer */
