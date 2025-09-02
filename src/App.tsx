@@ -4,6 +4,7 @@ import { Footer} from './components/Footer';
 import { Bio } from './components/Bio';
 import { projects } from './data/projects';
 import { ProjectsGrid } from './components/ProjectMain';
+import { Contact } from './components/Contact';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <div className=" min-h-screen flex flex-col">
       <Bio />
       <ProjectsGrid items={projects} />
+      <Contact />
   </div>
   </main>
   <Footer />

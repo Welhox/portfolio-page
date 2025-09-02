@@ -8,12 +8,14 @@
   /* Light mode */
   --color-background: white;
   --color-primary: theme('colors.slate.500');
+  --color-primary2: black;
   --color-secondary: white;
 }
 
 .dark {
   --color-background: theme('colors.slate.500');
   --color-primary: white;
+  --color-primary2: white;
   --color-secondary: theme('colors.slate.500');
 }
 
