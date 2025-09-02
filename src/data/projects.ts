@@ -23,11 +23,11 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/clundber/Minishell",
   },
   {
-    id: "cube3d",
-    name: "Cube3D",
+    id: "cub3d",
+    name: "Cub3D",
     info: "Wolfenstein‑style raycaster in C with textures and sprites",
-    image: "../src/assets/MyPlaceholder.jpg",
-    repoUrl: "https://github.com/clundber/Cub3D",
+    image: "../src/assets/project_pictures/cub3d.png",
+    repoUrl: "https://github.com/Welhox/cub3d",
   },
     {
     id: "cube3d2",

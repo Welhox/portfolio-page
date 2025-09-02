@@ -44,8 +44,8 @@ export function Header() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="cursor-pointer">
-        <h1 className="text-xl font-bold text-secondary font-artdeco tracking-wider">
-          &lt;〈CASIMIR LUNDBERG〉&gt;
+        <h1 className="text-xl font-bold text-secondary font-engagement tracking-wider">
+          &lt;CASIMIR LUNDBERG&gt;
         </h1>
         </button>
 
