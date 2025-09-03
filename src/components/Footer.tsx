@@ -5,7 +5,7 @@ export const Footer = () => {
           <div className="mx-auto truncate w-full max-w-[1500px] px-4 sm:px-6 lg:px-8 
                         flex justify-between items-center text-lg text-secondary">
             <span>&copy; 2025 Casimir Lundberg</span>
-            <span>I guess I need to add more content..</span>
+            <span></span>
           </div>
         </div>
     )

@@ -21,9 +21,9 @@ export function ProjectsGrid({ items }: { items: Project[] }) {
               className="group block aspect-square overflow-hidden rounded-xl flex flex-col"
             >
               {/* Header fills the remaining space */}
-              <div className="flex-1 bg-slate-400 text-slate-900 px-3 py-2 overflow-hidden flex flex-col justify-center">
-                <h3 className="text-l text-center mb-1 font-semibold leading-tight truncate">{p.name}</h3>
-                <p className="text-s text-slate-800 line-clamp-2">{p.info}</p>
+              <div className="items-center flex-1 bg-slate-400 text-slate-900 px-3 py-2 overflow-hidden flex flex-col justify-center">
+                <h3 className="text-l mb-1 font-semibold leading-tight truncate">{p.name}</h3>
+                <p className="text-s text-slate-800 text-center line-clamp-2">{p.info}</p>
               </div>
 
               {/* change the image size if needed. It is cropped if needed to fit the size */}

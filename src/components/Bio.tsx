@@ -12,11 +12,12 @@ export const Bio = () => {
 
   <div className="flex-1">
     <h2 className="text-5xl font-semibold mb-4 md:mt-40 text-center">
-      Hello, and welcome to my awesome homepage!
+      Hello there!
     </h2>
     <p className="mt-10 text-xl text-center rt-10">
-      I am a software developer with a background in Aviation. I am located in Espoo, Finland and have a passion
-      for backend development and cyber security. Here is also some more information. Like bla bla bla.
+      General k.. I mean hi! I’m Casimir “Casi” Lundberg, a former aviation professional who decided to follow a long-time passion for software development. After completing the 42 core curriculum at Hive Helsinki,
+      I now build projects from low-level C/C++ to full-stack web applications with React, Fastify and Node.js. What motivates me is solving complex problems with precision and creating
+      solutions people can rely on.
     </p>
   </div>
 </div>
