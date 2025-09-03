@@ -1,9 +1,9 @@
 import { icons } from "../assets/icons";
 
 export const Navigation = ({ mobile = false }: { mobile?: boolean }) => {
-  const itemClass = mobile
-    ? "flex items-center gap-3 px-2 py-2 rounded hover:bg-black/5 dark:hover:bg-white/10"
-    : "";
+  // const itemClass = mobile
+    // ? "flex items-center gap-3 px-2 py-2 rounded hover:bg-black/5 dark:hover:bg-white/10"
+    // : "";
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { Project } from "../types/project";
 
 export function ProjectsGrid({ items }: { items: Project[] }) {
