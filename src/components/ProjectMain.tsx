@@ -26,8 +26,8 @@ export function ProjectsGrid({ items }: { items: Project[] }) {
                 <p className="text-s text-slate-800 line-clamp-2">{p.info}</p>
               </div>
 
-              {/* Fixed 16:9 image area at the bottom (won’t shrink) */}
-              <div className="flex-none w-full aspect-video">
+              {/* change the image size if needed. It is cropped if needed to fit the size */}
+              <div className="aspect-[4/3] w-full overflow-hidden">
                 <img
                   src={p.image}
                   alt={p.name}

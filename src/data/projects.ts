@@ -2,31 +2,31 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    id: "transcendence",
-    name: "Transcendence",
+    id: "PinkiPONGki",
+    name: "PinkiPONGki",
     info: "Full‑stack Pong platform (Fastify/Prisma/SQLite + React/TS, JWT + OTP MFA)",
-    image: "../src/assets/MyPlaceholder.jpg",
-    repoUrl: "https://github.com/clundber/Transcendence",
+    image: "../src/assets/project_pictures/pong.gif",
+    repoUrl: "https://github.com/Welhox/PinkiPONGki",
   },
   {
     id: "webserv",
     name: "Webserv",
     info: "C++ HTTP/1.1 server with epoll and CGI support",
-    image: "../src/assets/MyPlaceholder.jpg",
+    image: "../src/assets/project_pictures/webserv.png",
     repoUrl: "https://github.com/clundber/Webserv",
   },
   {
     id: "minishell",
     name: "Minishell",
     info: "Bash‑style shell in C: pipes, redirects, built‑ins, signals",
-    image: "../src/assets/MyPlaceholder.jpg",
+    image: "../src/assets/project_pictures/Minishell-demo.gif",
     repoUrl: "https://github.com/clundber/Minishell",
   },
   {
     id: "cub3d",
     name: "Cub3D",
     info: "Wolfenstein‑style raycaster in C with textures and sprites",
-    image: "../src/assets/project_pictures/cub3d.png",
+    image: "../src/assets/project_pictures/cub3d.gif",
     repoUrl: "https://github.com/Welhox/cub3d",
   },
     {
