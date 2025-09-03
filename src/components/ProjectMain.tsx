@@ -10,7 +10,7 @@ export function ProjectsGrid({ items }: { items: Project[] }) {
           <span className="px-4">Projects</span>
           <span className="flex-1 h-px bg-slate-300"></span>
         </h2>
-        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p) => (
             <a
               key={p.id}
@@ -22,8 +22,8 @@ export function ProjectsGrid({ items }: { items: Project[] }) {
             >
               {/* Header fills the remaining space */}
               <div className="items-center flex-1 bg-slate-400 text-slate-900 px-3 py-2 overflow-hidden flex flex-col justify-center">
-                <h3 className="text-l mb-1 font-semibold leading-tight truncate">{p.name}</h3>
-                <p className="text-s text-slate-800 text-center line-clamp-2">{p.info}</p>
+                <h3 className="text-3xl mb-1 font-semibold leading-tight truncate">{p.name}</h3>
+                <p className=" text-slate-800 text-center line-clamp-2">{p.info}</p>
               </div>
 
               {/* change the image size if needed. It is cropped if needed to fit the size */}
