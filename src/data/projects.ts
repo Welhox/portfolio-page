@@ -43,4 +43,26 @@ export const projects: Project[] = [
     image: "/project_pictures/Bespoke_C.png",
     repoUrl: "https://github.com/welhox/Bespoke_c_library",
   },
+    {
+    id: "Mechanical-Turk-Algorithm",
+    name: "Mechanical Turk Algorithm",
+    info: "A sorting algorithm inspired by the Mechanical Turk",
+    image: "/project_pictures/mechanical-turk.gif",
+    repoUrl: "https://github.com/welhox/Mechanical-Turk-Algorithm",
+  },
+    {
+      id: "Mjango",
+      name: "Mjango",
+      info: "A top down 2D game in C",
+      image: "/project_pictures/mjango.gif",
+      repoUrl: "https://github.com/welhox/Mjango",
+    },
+    {
+      id: "Portfolio-page",
+      name: "Portfolio page",
+      info: "My personal portfolio page (React, TailwindCSS, Vite)",
+      image: "/project_pictures/portfolio2.png",
+      repoUrl: "https://github.com/welhox/Portfolio-page"
+    }
+
 ];
