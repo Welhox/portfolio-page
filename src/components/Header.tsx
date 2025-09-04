@@ -46,7 +46,7 @@ export function Header() {
           className="cursor-pointer"
         >
           <h1 className="text-xl font-bold text-secondary font-engagement tracking-wider">
-            &lt;CASIMIR LUNDBERG&gt;
+            &lt;<span className="text-slate-300 dark:text-slate-800">CASI</span>MIR LUNDBERG&gt;
           </h1>
         </button>
 

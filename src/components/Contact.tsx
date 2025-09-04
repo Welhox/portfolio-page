@@ -13,10 +13,10 @@ export const Contact = () => {
           className="w-10 h-10 md:w-20 md:h-20 filter dark:invert hover:opacity-80 hover:scale-110"
         />
         <a
-          href="mailto:casimir.lundberg@gmail.com"
+          href="mailto:mail@casimirlundberg.fi"
           className="text-primary2 md:text-4xl text-lg hover:scale-110 transform transition-transform inline-block"
         >
-          casimir.lundberg@gmail.com
+          mail@casimirlundberg.fi
         </a>
       </div>
       <div className="flex items-center justify-center gap-8 mb-4">
@@ -31,7 +31,7 @@ export const Contact = () => {
           rel="noopener noreferrer"
           className="text-primary2 md:text-4xl text-lg hover:scale-110 transform transition-transform inline-block"
         >
-          linkedin.com/in/caslun&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          linkedin.com/in/caslun&nbsp;&nbsp;&nbsp;
         </a>
       </div>
     </section>
