@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -6,19 +6,19 @@
 @theme {
   /* --font-artdeco: 'Poiret One', sans-serif; */
   /* --font-artdeco: 'Poiret One', sans-serif; */
-  
+
   /* Light mode */
   --color-background: white;
-  --color-primary: theme('colors.slate.500');
+  --color-primary: theme("colors.slate.500");
   --color-primary2: black;
   --color-secondary: white;
 }
 
 .dark {
-  --color-background: theme('colors.slate.500');
+  --color-background: theme("colors.slate.500");
   --color-primary: white;
   --color-primary2: white;
-  --color-secondary: theme('colors.slate.500');
+  --color-secondary: theme("colors.slate.500");
 }
 
 /* base layer */
@@ -39,7 +39,7 @@
 }
 
 @layer utilities {
- .border-red {
-  @apply border-8 border-red-500;
- }
+  .border-red {
+    @apply border-8 border-red-500;
+  }
 }

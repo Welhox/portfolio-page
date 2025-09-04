@@ -43,10 +43,11 @@ export function Header() {
       <div className="mx-auto flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="cursor-pointer">
-        <h1 className="text-xl font-bold text-secondary font-engagement tracking-wider">
-          &lt;CASIMIR LUNDBERG&gt;
-        </h1>
+          className="cursor-pointer"
+        >
+          <h1 className="text-xl font-bold text-secondary font-engagement tracking-wider">
+            &lt;CASIMIR LUNDBERG&gt;
+          </h1>
         </button>
 
         {/* Desktop nav */}
@@ -66,11 +67,29 @@ export function Header() {
                      text-secondary"
         >
           {/* icon switches between hamburger and X */}
-          <svg className={`h-6 w-6 ${open ? "hidden" : "block"}`} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <svg
+            className={`h-6 w-6 ${open ? "hidden" : "block"}`}
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M4 6h16M4 12h16M4 18h16"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
-          <svg className={`h-6 w-6 ${open ? "block" : "hidden"}`} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <svg
+            className={`h-6 w-6 ${open ? "block" : "hidden"}`}
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M6 6l12 12M18 6l-12 12"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>

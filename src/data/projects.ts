@@ -29,14 +29,14 @@ export const projects: Project[] = [
     image: "/project_pictures/cub3d.gif",
     repoUrl: "https://github.com/Welhox/cub3d",
   },
-    {
+  {
     id: "Philosophers",
     name: "Philosophers",
     info: "Dining philosophers problem in C with pthreads",
     image: "/project_pictures/philo.png",
     repoUrl: "https://github.com/welhox/philosophers",
   },
-    {
+  {
     id: "Bespoke_C_library",
     name: "Bespoke C library",
     info: "Bespoke C library implementation",
