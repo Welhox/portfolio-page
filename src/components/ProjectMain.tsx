@@ -17,7 +17,7 @@ export function ProjectsGrid({ items }: { items: Project[] }) {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${p.name} – open GitHub repository`}
-              className="group block aspect-square overflow-hidden rounded-xl flex flex-col"
+              className="group block aspect-square overflow-hidden rounded-xl flex flex-col border border-slate-400 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow hover:scale-[1.01] active:scale-[0.99] duration-150"
             >
               {/* Header fills the remaining space */}
               <div className="items-center flex-1 bg-slate-400 text-slate-900 px-3 py-2 overflow-hidden flex flex-col justify-center">
