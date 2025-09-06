@@ -30,9 +30,11 @@ export const Footer = () => {
           ref={privacyRef}
           className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8 mt-2 text-sm text-secondary"
         >
-          This site uses <strong>Cloudflare Web Analytics</strong> to measure traffic.  
-          The analytics are <strong>anonymous</strong>, <strong>cookie-free</strong>, and  
-          <strong> GDPR-compliant</strong>. No personal data is collected or stored.
+          This site uses <strong>Cloudflare Web Analytics</strong> to measure
+          traffic. The analytics are <strong>anonymous</strong>,{" "}
+          <strong>cookie-free</strong>, and
+          <strong> GDPR-compliant</strong>. No personal data is collected or
+          stored.
         </div>
       )}
     </div>

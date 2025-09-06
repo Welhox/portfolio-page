@@ -17,20 +17,19 @@ This site showcases my background, projects, CV, and contact information in a si
 
 ## ✨ Features
 
-- Optimized for both **desktop and mobile** with a responsive layout  
-- Dark/light mode support  
-- Project showcase with direct links to GitHub repositories  
-- Integrated **CV** for easy access  
-- About/Bio section highlighting my aviation background and transition into software development  
-- Contact section with quick access to email and LinkedIn  
-- Hosted via **GitHub Pages** with a custom domain  
+- Optimized for both **desktop and mobile** with a responsive layout
+- Dark/light mode support
+- Project showcase with direct links to GitHub repositories
+- Integrated **CV** for easy access
+- About/Bio section highlighting my aviation background and transition into software development
+- Contact section with quick access to email and LinkedIn
+- Hosted via **GitHub Pages** with a custom domain
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **React** + **TypeScript**  
-- **TailwindCSS** for styling  
-- **Vite** as the build tool  
-- **GitHub Pages** for deployment  
-
+- **React** + **TypeScript**
+- **TailwindCSS** for styling
+- **Vite** as the build tool
+- **GitHub Pages** for deployment
