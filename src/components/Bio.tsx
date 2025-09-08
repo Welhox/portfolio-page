@@ -12,16 +12,15 @@ export const Bio = () => {
 
       <div className="flex-1">
         <h2 className="text-5xl font-semibold mb-4 md:mt-40 text-center">
-          Hello there!
+          Hej/Terve/Hello!
         </h2>
-        <p className="mt-10 text-xl text-center rt-10">
-          General k.. I mean hi! I’m Casimir “Casi” Lundberg, a former aviation
-          professional who decided to follow a long-time passion for software
-          development. After completing the 42 core curriculum at Hive Helsinki,
-          I now build projects from low-level C/C++ to full-stack web
-          applications with React, Fastify and Node.js. What motivates me is
-          solving complex problems with precision and creating solutions people
-          can rely on.
+        <p className="mt-10 text-xl text-left rt-10">
+          I am Casimir “Casi” Lundberg, a aviation professional who decided to follow a long-time passion for software development. Aviation has taught me precision, responsibility, and teamwork, but these days my focus is all about code.
+        <br /><br />
+          To make the switch, I went through the 42 core curriculum at Hive Helsinki (2023–2025), where I built a solid foundation in C and C++ with hands-on projects. That low-level training gave me a strong programming mindset and the confidence to pick up new tools quickly.
+        <br /><br />
+          Right now I am working mostly with TypeScript, React, Node.js, Fastify and Python. I love tackling tricky problems, building full-stack applications, and learning whatever new tech a project throws at me.
+          {/* {bioText} */}
         </p>
       </div>
     </div>
