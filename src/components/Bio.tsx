@@ -1,4 +1,5 @@
 import me from "../assets/Me.jpg";
+import { TechBadges } from "./TechBadges";
 
 export const Bio = () => {
   return (
@@ -15,13 +16,13 @@ export const Bio = () => {
           Hej/Terve/Hello!
         </h2>
         <p className="mt-10 text-xl text-left rt-10">
-          I am Casimir “Casi” Lundberg, a aviation professional who decided to follow a long-time passion for software development. Aviation has taught me precision, responsibility, and teamwork, but these days my focus is all about code.
+          I am Casimir “Casi” Lundberg, an aviation professional who decided to follow a long-time passion for software development. Aviation has taught me precision, responsibility, and teamwork, but these days my focus is all about code.
         <br /><br />
           To make the switch, I went through the 42 core curriculum at Hive Helsinki (2023–2025), where I built a solid foundation in C and C++ with hands-on projects. That low-level training gave me a strong programming mindset and the confidence to pick up new tools quickly.
         <br /><br />
           Right now I am working mostly with TypeScript, React, Node.js, Fastify and Python. I love tackling tricky problems, building full-stack applications, and learning whatever new tech a project throws at me.
-          {/* {bioText} */}
         </p>
+        <TechBadges />
       </div>
     </div>
   );
