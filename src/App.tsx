@@ -6,6 +6,8 @@ import { projects } from "./data/projects";
 import { ProjectsGrid } from "./components/ProjectMain";
 import { Contact } from "./components/Contact";
 
+import FloatingChat
+ from "./components/FloatingChat";
 function App() {
   return (
     <div className="bg-background">
@@ -15,6 +17,7 @@ function App() {
           <Bio />
           <ProjectsGrid items={projects} />
           <Contact />
+          <FloatingChat />
         </div>
       </main>
       <Footer />
