@@ -1,52 +1,62 @@
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks"; // keep single \n as <br/>
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github.css"; // simple, readable in light/dark
+import "highlight.js/styles/github.css"; // swap to 'github-dark.css' if you prefer
+
+const components: Components = {
+  a: (props) => (
+    <a
+      {...props}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="underline decoration-slate-400 hover:decoration-slate-700"
+    />
+  ),
+  pre: (props) => (
+    <pre
+      {...props}
+      className="my-2 rounded-xl p-3 overflow-x-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900"
+    />
+  ),
+  code: (props) => {
+    // react-markdown v8+ passes 'inline' status via props.node.inline
+    const { className, children, node, ...rest } = props as any;
+    const inline = node?.inline;
+    if (inline) {
+      return (
+        <code
+          {...rest}
+          className={`rounded px-1 py-0.5 bg-slate-100 dark:bg-slate-800 ${className || ""}`}
+        >
+          {children}
+        </code>
+      );
+    }
+    return (
+      <code {...rest} className={className}>
+        {children}
+      </code>
+    );
+  },
+  ul: (props) => <ul {...props} className="my-1 pl-5 space-y-1 list-disc" />,
+  ol: (props) => <ol {...props} className="my-1 pl-5 space-y-1 list-decimal" />,
+  li: (props) => <li {...props} className="m-0" />,
+  // 🔑 tighter lines, no extra margins, and no pre-wrap (remark-breaks will insert <br/>)
+  p: (props) => <p {...props} className="m-0 leading-snug break-words" />,
+};
 
 export default function MarkdownMessage({ content }: { content: string }) {
+  // Normalize CRLF to LF so we don't get accidental double spacing on <br/>
+  const normalized = content.replace(/\r\n/g, "\n");
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={[remarkGfm, remarkBreaks]}
       rehypePlugins={[rehypeHighlight]}
-      components={{
-        a: (props) => (
-          <a
-            {...props}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="underline decoration-slate-400 hover:decoration-slate-700"
-          />
-        ),
-        pre: (props) => (
-          <pre
-            {...props}
-            className="rounded-xl p-3 overflow-x-auto border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900"
-          />
-        ),
-        code: ({ inline, className, children, ...props }) => {
-          if (inline) {
-            return (
-              <code
-                {...props}
-                className={`rounded px-1 py-0.5 bg-slate-100 dark:bg-slate-800 ${className || ""}`}
-              >
-                {children}
-              </code>
-            );
-          }
-          return (
-            <code {...props} className={className}>
-              {children}
-            </code>
-          );
-        },
-        ul: (props) => <ul {...props} className="list-disc pl-6 my-2" />,
-        ol: (props) => <ol {...props} className="list-decimal pl-6 my-2" />,
-        p: (props) => <p {...props} className="my-2" />,
-      }}
+      components={components}
     >
-      {content}
+      {normalized}
     </ReactMarkdown>
   );
 }
+
