@@ -5,8 +5,6 @@ export interface Msg { role: Role; content: string; }
 
 export interface UseChatOpts {
   apiBase?: string;
-  model?: string;
-  temperature?: number;
   systemPrompt?: string;
   offlineMessage?: string; // fixed reply if backend is unreachable
 }
@@ -76,38 +74,21 @@ export function useChatStream(opts: UseChatOpts = {}) {
       appendMessage({ role: "user", content });
       appendMessage({ role: "assistant", content: "" });
 
+      // Build payload the backend expects
       const payload = {
-        model: opts.model ?? "gpt-4o-mini",
-        temperature: opts.temperature ?? 0.4,
-        stream: true,
-        messages: messages
-          .concat({ role: "user", content } as Msg)
-          .map(m => ({ role: m.role, content: m.content })),
+        message: content,
+        history: messages.map(m => ({ role: m.role, content: m.content })),
       };
 
       const ctrl = new AbortController();
       abortRef.current = ctrl;
       setIsStreaming(true);
 
-      try {
-        const res = await fetch(`${apiBase}/chat`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "text/event-stream",
-          },
-          body: JSON.stringify(payload),
-          signal: ctrl.signal,
-        });
-
-        if (!res.ok || !res.body) {
-          throw new Error(`HTTP ${res.status}`);
-        }
-
-        const reader = res.body.getReader();
+      // Helper: SSE stream read loop
+      const readSSE = async (res: Response) => {
+        const reader = res.body!.getReader();
         const decoder = new TextDecoder();
 
-        // stream loop
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
@@ -121,21 +102,57 @@ export function useChatStream(opts: UseChatOpts = {}) {
 
             if (data === "[DONE]") {
               stop();
-              return;
+              return true; // streamed successfully
             }
             if (data.startsWith("[ERROR]")) {
               setError(data.slice(7).trim());
-              replaceAssistantWith(
-                opts.offlineMessage ?? OFFLINE_DEFAULT
-              );
+              replaceAssistantWith(opts.offlineMessage ?? OFFLINE_DEFAULT);
               stop();
-              return;
+              return true; // handled as error
             }
 
             // normal token delta
             pushAssistantDelta(data);
           }
         }
+        return true;
+      };
+
+      try {
+        // 1) Try streaming endpoint first (if your backend provides it)
+        let res = await fetch(`${apiBase}/chat/stream`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "text/event-stream",
+          },
+          body: JSON.stringify(payload),
+          signal: ctrl.signal,
+        });
+
+        const ct = res.headers.get("content-type") || "";
+        const isEventStream = res.ok && res.body && ct.includes("text/event-stream");
+
+        if (isEventStream) {
+          await readSSE(res);
+          return;
+        }
+
+        // 2) Fallback to non-streaming JSON endpoint
+        res = await fetch(`${apiBase}/chat`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+          signal: ctrl.signal,
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const reply = String(data?.reply ?? "");
+        replaceAssistantWith(reply);
       } catch (err: any) {
         if (err?.name !== "AbortError") {
           setError("offline");
@@ -151,9 +168,7 @@ export function useChatStream(opts: UseChatOpts = {}) {
       input,
       isStreaming,
       messages,
-      opts.model,
       opts.offlineMessage,
-      opts.temperature,
       pushAssistantDelta,
       replaceAssistantWith,
       stop,
