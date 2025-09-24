@@ -14,7 +14,10 @@ const OFFLINE_DEFAULT =
 
 export function useChatStream(opts: UseChatOpts = {}) {
   const apiBase =
-    opts.apiBase || import.meta.env.VITE_AI_API_URL || "http://localhost:8000";
+    opts.apiBase || 
+    import.meta.env.VITE_API_BASE || 
+    import.meta.env.VITE_AI_API_URL || 
+    "http://localhost:8000";
 
   const [messages, setMessages] = useState<Msg[]>(
     opts.systemPrompt ? [{ role: "system", content: opts.systemPrompt }] : []
