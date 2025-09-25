@@ -123,7 +123,7 @@ const ChatInterface = forwardRef<HTMLDivElement, ChatInterfaceProps>(({
             onKeyDown={handleKeyDown}
             placeholder={placeholder}
             disabled={chat.isStreaming}
-            className="flex-1 resize-none rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+            className="flex-1 resize-none rounded-lg border-2 border-gray-400 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 placeholder:text-gray-500"
             rows={1}
             style={{ minHeight: "40px", maxHeight: "120px" }}
           />
@@ -131,7 +131,7 @@ const ChatInterface = forwardRef<HTMLDivElement, ChatInterfaceProps>(({
           <button
             type="submit"
             disabled={!chat.input.trim() || chat.isStreaming}
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200"
           >
             {chat.isStreaming ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />

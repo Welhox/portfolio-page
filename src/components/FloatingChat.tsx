@@ -58,8 +58,8 @@ export default function FloatingChat() {
           className={[
             "fixed right-4 bottom-20 sm:bottom-24 z-[9999]",
             "w-[min(420px,95vw)] h-[min(70vh,640px)]",
-            "bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm",
-            "border border-slate-200/70 dark:border-slate-700/60 shadow-2xl rounded-2xl",
+            "bg-gray-50/90 dark:bg-slate-900/80 backdrop-blur-sm",
+            "border-2 border-gray-300 dark:border-slate-700/60 shadow-2xl rounded-2xl",
             "transition-all duration-300",
             "opacity-100 translate-y-0 pointer-events-auto"
           ].join(" ")}

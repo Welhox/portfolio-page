@@ -23,7 +23,7 @@ export default function MessageBubble({ message, isStreaming = false }: MessageB
           "max-w-[80%] rounded-2xl px-4 py-3 shadow-sm",
           isUser 
             ? "bg-blue-500 text-white rounded-br-md" 
-            : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-bl-md"
+            : "bg-gray-300 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-bl-md"
         ].join(" ")}
       >
         {isAssistant && (
