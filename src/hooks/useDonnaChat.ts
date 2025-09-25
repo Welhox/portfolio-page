@@ -90,12 +90,20 @@ export function useDonnaChat(options: ChatHookOptions = {}): ChatHookResult {
     setIsConnected(true);
 
     try {
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      };
+      
+      // Add API key if available
+      const apiKey = import.meta.env.VITE_AI_API_KEY;
+      if (apiKey) {
+        headers["X-API-Key"] = apiKey;
+      }
+
       const response = await fetch(`${apiBase}/chat`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+        headers,
         body: JSON.stringify(payload),
         signal: controller.signal,
       });
