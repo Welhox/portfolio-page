@@ -33,6 +33,7 @@ jobs:
         run: npm run build
         env:
           VITE_API_BASE: ${{ secrets.VITE_API_BASE }}
+          VITE_AI_API_KEY: ${{ secrets.VITE_AI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
