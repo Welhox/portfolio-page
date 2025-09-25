@@ -80,7 +80,7 @@ export default function FloatingChat() {
             {/* Close button overlay */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-2 right-2 p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 z-10"
+              className="absolute top-2 right-2 p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 z-10"
               aria-label="Close chat"
             >
               <CloseIcon className="w-5 h-5" />

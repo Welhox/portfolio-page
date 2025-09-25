@@ -123,7 +123,7 @@ const ChatInterface = forwardRef<HTMLDivElement, ChatInterfaceProps>(({
             onKeyDown={handleKeyDown}
             placeholder={placeholder}
             disabled={chat.isStreaming}
-            className="flex-1 resize-none rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+            className="flex-1 resize-none rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
             rows={1}
             style={{ minHeight: "40px", maxHeight: "120px" }}
           />
