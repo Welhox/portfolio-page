@@ -46,17 +46,42 @@ const components: Components = {
   p: (props) => <p {...props} className="m-0 leading-snug break-words" />,
 };
 
-export default function MarkdownMessage({ content }: { content: string }) {
+interface MarkdownMessageProps {
+  content: string;
+  className?: string;
+}
+
+export default function MarkdownMessage({ content, className = "" }: MarkdownMessageProps) {
   // Normalize CRLF to LF so we don't get accidental double spacing on <br/>
   const normalized = content.replace(/\r\n/g, "\n");
-  return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm, remarkBreaks]}
-      rehypePlugins={[rehypeHighlight]}
-      components={components}
-    >
-      {normalized}
-    </ReactMarkdown>
-  );
+
+  // Handle empty content - let typing indicator handle empty states
+  if (!normalized.trim()) {
+    return <div className={className}></div>;
+  }
+
+  try {
+    return (
+      <div className={className}>
+        <ReactMarkdown
+          components={components}
+          remarkPlugins={[remarkGfm, remarkBreaks]}
+          rehypePlugins={[rehypeHighlight]}
+        >
+          {normalized}
+        </ReactMarkdown>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error rendering markdown:", error);
+    return (
+      <div className={`text-red-500 ${className}`}>
+        <p>😿 Donna encountered an error while formatting this message.</p>
+        <pre className="text-xs mt-2 p-2 bg-red-50 dark:bg-red-900/20 rounded">
+          {normalized}
+        </pre>
+      </div>
+    );
+  }
 }
 
