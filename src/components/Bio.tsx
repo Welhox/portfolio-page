@@ -12,7 +12,7 @@ export const Bio = () => {
       />
 
       <div className="flex-1">
-        <h2 className="text-5xl font-semibold mb-4 md:mt-40 text-center">
+        <h2 className="text-5xl font-semibold mb-4 md:mt-20 text-center">
           Hej/Terve/Hello!
         </h2>
         <p className="mt-10 text-xl text-left rt-10">
