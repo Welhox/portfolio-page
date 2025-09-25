@@ -21,6 +21,8 @@ export const Bio = () => {
           To make the switch, I went through the 42 core curriculum at Hive Helsinki (2023–2025), where I built a solid foundation in C and C++ with hands-on projects. That low-level training gave me a strong programming mindset and the confidence to pick up new tools quickly.
         <br /><br />
           Right now I am working mostly with TypeScript, React, Node.js, Fastify and Python. I love tackling tricky problems, building full-stack applications, and learning whatever new tech a project throws at me.
+        <br /><br />
+          Please feel free to have a discussion with my trusted AI companion, Donna (created in Python), by clicking the chat icon at the bottom right corner. She can answer questions about my background, skills, and projects. 🐾  
         </p>
         <TechBadges />
       </div>
