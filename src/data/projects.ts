@@ -16,6 +16,13 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/welhox/MiniBash",
   },
   {
+    id: "Chat-Ai-agent",
+    name: "Donna-AI-assistant",
+    info: "An AI-powered chatbot",
+    image: "/project_pictures/Donna-ai-assistant-4-3.png",
+    repoUrl: "https://github.com/Welhox/Donna-AI-assistant",
+  },
+  {
     id: "webserver",
     name: "Webserver",
     info: "HTTP/1.1 server with CGI support",
@@ -49,6 +56,13 @@ export const projects: Project[] = [
     info: "A sorting algorithm inspired by the Mechanical Turk",
     image: "/project_pictures/mechanical-turk.gif",
     repoUrl: "https://github.com/welhox/Mechanical-Turk-Algorithm",
+  },
+  {
+    id: "URL-changer",
+    name: "URL Changer and slackbot",
+    info: "transmute a URL to another domain",
+    image: "/project_pictures/URL-changer.png",
+    repoUrl: "https://github.com/welhox/URL_changer",
   },
   {
     id: "Mjango",
